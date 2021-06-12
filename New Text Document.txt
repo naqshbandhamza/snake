@@ -1,0 +1,16 @@
+ if s.snake[0].obj.xcor()>=400:
+        list1 = s.snake.copy()
+        list1.reverse()
+        for i in range(0,len(s.snake)):
+            win.update()
+            x = s.snake[i].obj.xcor()*-1
+            y = s.snake[i].obj.ycor()
+            s.snake[i].obj.setx(x)
+            s.snake[i].obj.sety(y)
+            if i==len(s.snake)-1:
+                s.snake[i].obj.color('orange')
+            else:
+                s.snake[i].obj.color('yellow')
+            win.update()
+        s.snake[0].snake_right()
+        return list1
